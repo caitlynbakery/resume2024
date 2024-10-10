@@ -1,0 +1,55 @@
+extends layouts/LayoutTheme
+include ./mixins/homes/Default.pug
+
+prepend styles
+  link(href=`${CWD}vendors/swiper/swiper-bundle.min.css`, rel='stylesheet')
+
+prepend scripts
+  script(src=`${CWD}vendors/isotope-layout/isotope.pkgd.min.js`) 
+  script(src=`${CWD}vendors/isotope-packery/packery-mode.pkgd.min.js`) 
+  script(src=`${CWD}vendors/rellax/rellax.min.js`) 
+
+block beforeMainContent
+  +FancyNav({menu: 
+  {
+    "why caitlyn": "./#defaultWhyUs",
+    "skills": "./#defaultServices",
+    "fluency": "./#defaultProgressbar",
+    "portfolio": "./#defaultGallery",
+  }})(data-onscroll-fade-in=true)
+
+prepend styles
+  link(href=`${CWD}vendors/swiper/swiper-bundle.min.css`, rel='stylesheet')
+
+prepend scripts
+  script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`)
+  script(src=`${CWD}vendors/bigpicture/BigPicture.js`)
+  script(src=`${CWD}vendors/progressbar/progressbar.min.js`)
+  script(src=`${CWD}vendors/rellax/rellax.min.js`) 
+
+append mainContent 
+  +DefaultHeader
+  +DefaultWhyUs
+  +DefaultServices
+  +DefaultProcess
+  //+DefaultCta1
+  +DefaultProgressbar
+
+  //+DefaultCta2
+  //+DefaultPricingPlan
+  //+DefaultCta3
+  //+DefaultMembers
+  +DefaultGallery
+  +DefaultCta4
+
+
+//- append variables
+//-   -
+//-     var showcaseItems = {
+//-       homes: ['default', 'bigcartel', 'cafe', 'bicycle', 'digital', 'ecommerce', 'event', 'interior', 'landing', 'promotion', 'software', 'studio'],
+//-       pages: ['404', 'about', 'blog', 'cart', 'casestudy', 'coming-soon', 'contact', 'split-static', 'split-youtube', 'portfolio', 'profile', 'rtl', 'services', 'shop', 'signin', 'signup', 'blog-single', 'product-single'],
+//-     };
+
+//- append mainContent
+//-   +Showcase
+
